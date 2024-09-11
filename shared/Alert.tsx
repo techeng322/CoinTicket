@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { MdOutlineClose } from "react-icons/md";
 
@@ -9,14 +8,14 @@ interface AlertProps {
 
 const Alert: React.FC<AlertProps> = ({ icon, text }) => {
     return (
-        <div className="rounded-[5px] border border-red p-4 flex flex justify-between items-center">
-            <div className="flex items-center gap-2 ">
+        <div className="flex justify-between w-full rounded-md border border-[#3352c3] bg-blue-light_200 p-4 items-center text-[14px]">
+            <div className="flex items-center gap-2">
                 {icon}
                 {text}
             </div>
-            <span className="mr-2 p-1 text-red-500 hover:text-red-700">
+            <div className="mr-2">
                 <MdOutlineClose />
-            </span>
+            </div>
         </div>
     );
 };

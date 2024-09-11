@@ -4,8 +4,11 @@
 module.exports = {
   darkMode: ['class'],
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
+    "./shared/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     container: {
@@ -28,6 +31,11 @@ module.exports = {
         grey: {
           DEFAULT: '#949494',
           light: '#f6f6f6',
+        },
+        blue: {
+          DEFAULT: 'blue',
+          light_100: '#e8eaef',
+          light_200: '#d6ddf7',
         },
         background: {
           DEFAULT: '#f2e8cd',

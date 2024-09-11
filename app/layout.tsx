@@ -1,7 +1,7 @@
 'use client'
 
+import Filter from '@/components/Filter'
 import '@/styles/globals.css'
-import 'react-toastify/dist/ReactToastify.css'
 import { Analytics } from '@vercel/analytics/react'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
@@ -13,11 +13,14 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="overflow-hidden">
-      <body className="overflow-hidden">
+    <html lang="en">
+      <body>
         {children}
         <ToastContainer />
         <Analytics />
+        <div className="fixed bottom-[100px] right-[20px]">
+          <Filter/>
+        </div>
       </body>
     </html>
   )
