@@ -1,7 +1,7 @@
 const Post = () => {
     return (
         <div className="w-full h-[300px] text-center flex flex-col items-center">
-            <div className="border-black w-[150px] y-[150px]"></div>
+            <div className="border border-black w-[100px] h-[100px]"></div>
             <div className="mt-4">
                 <div className="text-[18px] font-bold">Create a Post</div>
                 <div className="text-center">

@@ -16,7 +16,7 @@ enum state {
 const MyActivity = () => {
   const [method, setMethod] = useState(state.CARDS)
   return (
-    <div className="w-full flex flex-col gap-y-4 p-4 bg-blue-light_100">
+    <div className="w-full flex flex-col gap-y-4 p-4 bg-blue-light_100 min-h-screen">
       <div className="flex justify-center relative items-center text-lg font-bold">
         <div className="absolute left-0">
           <FaArrowLeft />
