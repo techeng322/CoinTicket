@@ -1,6 +1,8 @@
 'use client'
 
-import Filter from '@/components/Filter'
+import FilterButton from '@/components/FilterButton'
+import Header from '@/components/Header'
+import SideBar from '@/components/SideBar'
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { ReactNode } from 'react'
@@ -15,11 +17,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <main className="w-full flex">
+          <SideBar />
+          <div className="flex-grow bg-blue-light_100">
+            <Header />
+            {children}
+          </div>
+        </main>
         <ToastContainer />
         <Analytics />
         <div className="fixed bottom-[100px] right-[20px]">
-          <Filter/>
+          <FilterButton />
         </div>
       </body>
     </html>

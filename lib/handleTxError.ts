@@ -1,4 +1,4 @@
-import { toast } from "react-toastify"
+import { toast } from 'react-toastify'
 
 const handleTxError = (error: any) => {
   const primaryError = error?.reason || error?.data?.message

@@ -1,20 +1,20 @@
-import { Timestamp } from 'firebase/firestore';
+import { Timestamp } from 'firebase/firestore'
 
 export interface FAQ {
-    id: string;
-    question: string;
-    answer: string;
-    category?: string;
-    createdAt: Timestamp;
-    updatedAt: Timestamp;
+  id: string
+  question: string
+  answer: string
+  category?: string
+  createdAt: Timestamp
+  updatedAt: Timestamp
 }
 
 export interface Poll {
-    question: string;
-    options: string[];
+  question: string
+  options: string[]
 }
 
 export interface Post {
-    title: string;
-    content: string[];
+  title: string
+  content: string[]
 }

@@ -1,5 +1,5 @@
-import CustomPoll from "@/components/CustomPoll";
+import CustomPollPage from '@/components/Pages/CustomPollPage'
 
-const Page = () => <CustomPoll />
+const Page = () => <CustomPollPage />
 
-export default Page;
+export default Page

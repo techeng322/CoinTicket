@@ -1,14 +1,13 @@
-import { IsString, IsArray, ArrayNotEmpty } from 'class-validator';
+import { IsString, IsArray, ArrayNotEmpty } from 'class-validator'
 
 export class Poll {
   @IsString()
-  id: string;
+  id: string
 
   @IsString()
-  question: string;
+  question: string
 
   @IsArray()
   @ArrayNotEmpty()
-  
-  options: string[];
+  options: string[]
 }
