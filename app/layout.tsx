@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <SideBar />
           <div className="flex-grow bg-blue-light_100">
             <Header />
-            {children}
+            <div className="p-4">{children}</div>
           </div>
         </main>
         <ToastContainer />

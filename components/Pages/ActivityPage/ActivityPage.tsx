@@ -50,26 +50,26 @@ const ActivityPage = () => {
       </div>
 
       <div className="flex flex-col gap-4 mt-4">
-          <div className="flex justify-start gap-5 bg-[#F1F1F1] p-2">
-            <button
-              className={`${method === state.TICKETS ? 'text-white font-bold bg-[#192943]' : 'text-grey'} hover:cursor-pointer hover:text-[white] hover:bg-[#192943] hover:text-whtie rounded px-2 py-1 text-[14px] active:scale-[1.05]`}
-              onClick={() => setMethod(state.TICKETS)}
-            >
-              Tickets(2)
-            </button>
-            <button
-              className={`${method === state.POLLS ? 'text-white font-bold bg-[#192943]' : 'text-grey'} hover:cursor-pointer hover:text-[white] hover:bg-[#192943] hover:text-whtie rounded px-2 py-1 text-[14px] active:scale-[1.05]`}
-              onClick={() => setMethod(state.POLLS)}
-            >
-              Polls(2)
-            </button>
-            <button
-              className={`${method === state.INSIGHTS ? 'text-white font-bold bg-[#192943]' : 'text-grey'} hover:cursor-pointer hover:text-[white] hover:bg-[#192943] hover:text-whtie rounded px-2 py-1 text-[14px] active:scale-[1.05]`}
-              onClick={() => setMethod(state.INSIGHTS)}
-            >
-              Insights
-            </button>
-          </div>
+        <div className="flex justify-start gap-5 bg-[#F1F1F1] p-2">
+          <button
+            className={`${method === state.TICKETS ? 'text-white font-bold bg-[#192943]' : 'text-grey'} hover:cursor-pointer hover:text-[white] hover:bg-[#192943] hover:text-whtie rounded px-2 py-1 text-[14px] active:scale-[1.05]`}
+            onClick={() => setMethod(state.TICKETS)}
+          >
+            Tickets(2)
+          </button>
+          <button
+            className={`${method === state.POLLS ? 'text-white font-bold bg-[#192943]' : 'text-grey'} hover:cursor-pointer hover:text-[white] hover:bg-[#192943] hover:text-whtie rounded px-2 py-1 text-[14px] active:scale-[1.05]`}
+            onClick={() => setMethod(state.POLLS)}
+          >
+            Polls(2)
+          </button>
+          <button
+            className={`${method === state.INSIGHTS ? 'text-white font-bold bg-[#192943]' : 'text-grey'} hover:cursor-pointer hover:text-[white] hover:bg-[#192943] hover:text-whtie rounded px-2 py-1 text-[14px] active:scale-[1.05]`}
+            onClick={() => setMethod(state.INSIGHTS)}
+          >
+            Insights
+          </button>
+        </div>
         <div className="rounded-default flex-grow">
           {method === state.TICKETS && <Tickets />}
           {method === state.POLLS && <Polls />}

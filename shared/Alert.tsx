@@ -14,7 +14,7 @@ const Alert: React.FC<AlertProps> = ({ icon, text }) => {
         {text}
       </div>
       <div className="mr-2">
-        <MdOutlineClose className='cursor-pointer'/>
+        <MdOutlineClose className="cursor-pointer" />
       </div>
     </div>
   )

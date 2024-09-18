@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../lib/firebase/clientApp'
 
-const withAuth = (children: ReactNode) => {
+const WithAuth = (children: ReactNode) => {
   const router = useRouter()
 
   useEffect(() => {
@@ -18,4 +18,4 @@ const withAuth = (children: ReactNode) => {
   return <>{children}</>
 }
 
-export default withAuth
+export default WithAuth

@@ -1,8 +1,8 @@
-import Image from "next/image"
-import { CSSProperties, DetailedHTMLProps, VideoHTMLAttributes } from "react"
+import Image from 'next/image'
+import { CSSProperties, DetailedHTMLProps, VideoHTMLAttributes } from 'react'
 
 interface IMedia {
-  type: "video" | "image"
+  type: 'video' | 'image'
   link?: string
   posterLink?: string
   containerStyle?: CSSProperties
@@ -11,7 +11,7 @@ interface IMedia {
   videoProps?: DetailedHTMLProps<VideoHTMLAttributes<HTMLVideoElement>, HTMLVideoElement>
   blurLink?: string
   alt?: string
-  layout?: "fill" | "responsive" | "fixed" | "intrinsic"
+  layout?: 'fill' | 'responsive' | 'fixed' | 'intrinsic'
   width?: number
   height?: number
   imageClasses?: string
@@ -24,23 +24,23 @@ function Media({
   containerStyle,
   blurLink,
   alt,
-  layout = "fill",
+  layout = 'fill',
   width,
   height,
   imageClasses,
 }: IMedia) {
   return (
-    <div className={`relative ${containerClasses || ""}`} style={containerStyle || {}}>
-      {type === "image" && link && (
+    <div className={`relative ${containerClasses || ''}`} style={containerStyle || {}}>
+      {type === 'image' && link && (
         <Image
           className={`absolute !w-full object-cover ${imageClasses}`}
           src={link}
           layout={layout}
-          alt={alt || "not found image"}
+          alt={alt || 'not found image'}
           placeholder="blur"
           blurDataURL={
             blurLink ||
-            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOcMXP2OQAGOQKc/DqDigAAAABJRU5ErkJggg=="
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOcMXP2OQAGOQKc/DqDigAAAABJRU5ErkJggg=='
           }
           {...(width &&
             height && {

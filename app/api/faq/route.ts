@@ -1,28 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { collection, getDocs, doc, getDoc, setDoc, Timestamp, addDoc } from 'firebase/firestore'
+import { NextResponse } from 'next/server'
+import { collection, doc, getDoc, addDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase/clientApp'
-import { FAQ } from '@/lib/types'
-
-// In-memory store for demonstration purposes
-// const now = Timestamp.now()
-// const faqs: FAQ[] = [
-//   {
-//     id: 'faq1',
-//     question: 'What is TypeScript?',
-//     answer: 'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.',
-//     category: 'Programming', // Optional field
-//     createdAt: now,
-//     updatedAt: now
-//   },
-//   {
-//     id: 'faq2',
-//     question: 'How does Express work?',
-//     answer: 'Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.',
-//     category: 'Frameworks', // Optional field
-//     createdAt: now,
-//     updatedAt: now
-//   }
-// ];
 
 export async function GET(request: Request) {
   const url = new URL(request.url)

@@ -1,3 +1,3 @@
-import OverviewPage from "./OverviewPage";
+import OverviewPage from './OverviewPage'
 
-export default OverviewPage;
+export default OverviewPage

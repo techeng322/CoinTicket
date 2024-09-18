@@ -4,14 +4,14 @@ import { FaArrowRight } from 'react-icons/fa'
 const Adventage = () => {
   return (
     <div className="w-full relative h-fit-content mt-10">
-      <div className='w-full aspect-[1/1] rounded-lg overflow-hidden'>
+      <div className="w-full aspect-[1/1] rounded-lg overflow-hidden relative">
         <Image
           src="/images/trade_crypto.svg"
           alt=""
           fill
           style={{ objectFit: 'cover', objectPosition: 'center' }}
           unoptimized
-          className='rounded'
+          className="rounded"
         />
       </div>
       <div className="z-[2] w-full h-full p-6 absolute top-0 l-0">

@@ -1,4 +1,4 @@
-import OverviewPage from "@/components/Pages/OverviewPage";
+import OverviewPage from '@/components/Pages/OverviewPage'
 
 const Overview = () => <OverviewPage />
 

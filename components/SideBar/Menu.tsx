@@ -1,4 +1,4 @@
-import { RiGalleryView2 , RiVerifiedBadgeLine } from 'react-icons/ri'
+import { RiGalleryView2, RiVerifiedBadgeLine } from 'react-icons/ri'
 import { SiGreatlearning } from 'react-icons/si'
 import { LiaUserFriendsSolid } from 'react-icons/lia'
 import { FaQuestion } from 'react-icons/fa6'

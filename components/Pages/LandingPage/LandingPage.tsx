@@ -1,9 +1,8 @@
 'use client'
 
-import HistorySection from "./HistorySection"
-import SortButtons from "./HistorySection/SortButtons"
-import MenuSection from "./MenuSection"
-import TopSection from "./TopSection"
+import HistorySection from './HistorySection'
+import MenuSection from './MenuSection'
+import TopSection from './TopSection'
 
 const LandingPage = () => {
   return (

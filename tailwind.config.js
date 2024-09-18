@@ -33,6 +33,7 @@ module.exports = {
         poppins_medium: ['Poppins-Medium', 'sans-serif'],
         poppins_bold: ['Poppins-Bold', 'sans-serif'],
         spaceGrotesk_medium: ['SpaceGrotesk-Medium', 'sans-serif'],
+        poppins_blackitalic: ['Poppins-BlackItalic', 'sans-serif'],
       },
       colors: {
         grey: {

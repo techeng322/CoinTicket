@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { FaArrowLeft } from 'react-icons/fa6'
-import { FaPlusCircle } from "react-icons/fa";
+import { FaPlusCircle } from 'react-icons/fa'
 
 const CustomPollPage = () => {
   const [question, setQuestion] = useState('')
@@ -13,16 +13,16 @@ const CustomPollPage = () => {
   }
 
   const addOption = () => {
-    let temp = [...options];
-    temp = [...temp, ""]
+    let temp = [...options]
+    temp = [...temp, '']
     setOptions(temp)
   }
 
-  const deleteOption = (i) => {
-    const temp = [...options]
-    delete temp[i]
-    setOptions(temp)
-  }
+  // const deleteOption = (i) => {
+  //   const temp = [...options]
+  //   delete temp[i]
+  //   setOptions(temp)
+  // }
 
   return (
     <div className="w-full p-8 relative">
@@ -52,9 +52,9 @@ const CustomPollPage = () => {
             )
           })}
         </div>
-        <div className='flex justify-center p-4'>
-          <button className='active:scale-[1.0.5]'>
-            <FaPlusCircle color="#0A1B36" size={30} onClick={addOption}/>
+        <div className="flex justify-center p-4">
+          <button className="active:scale-[1.0.5]">
+            <FaPlusCircle color="#0A1B36" size={30} onClick={addOption} />
           </button>
         </div>
       </div>
