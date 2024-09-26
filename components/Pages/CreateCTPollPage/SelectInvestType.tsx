@@ -15,7 +15,7 @@ const SelectInvestType = () => {
       </div>
       <div className="">
         Select Investment Type
-        <input type="text" value={coinText} onChange={(e)=>setCoinText(e.target.value)} />
+        <input type="text" value={coinText} onChange={(e) => setCoinText(e.target.value)} />
       </div>
     </div>
   )

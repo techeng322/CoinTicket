@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <main className="w-full flex">
           <SideBar />
-          <div className="flex-grow bg-blue-light_100">
+          <div className="flex-grow">
             <Header />
             <div className="p-4">{children}</div>
           </div>

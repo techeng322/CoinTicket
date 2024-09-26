@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
-import getCoinPrice from '@/lib/getCoinPrice'
+import axios from 'axios'
 
 export async function POST(req: NextRequest) {
   try {
-    const { coinType } = await req.json()
-    const response = await getCoinPrice(coinType)
-    return NextResponse.json({ message: 'success', price: response.data })
+    const { id } = await req.json()
+    const response = await axios.get(
+      `https://api.coingecko.com/api/v3/simple/price?id=${id}&vs_currencies=usd`,
+    )
+    return NextResponse.json({ message: 'success', data: response.data })
   } catch (error) {
-    return NextResponse.json({ message: 'failed', error: 'can not get price' })
+    return NextResponse.json({ message: 'failed', error })
   }
 }
