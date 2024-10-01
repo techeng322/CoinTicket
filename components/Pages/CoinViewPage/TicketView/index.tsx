@@ -14,11 +14,12 @@ const TicketView = () => {
     }
     init()
   }, [coinInfo.id])
+  console.log("chani-response", tickets)
 
   return (
     <div className="w-full flex flex-wrap gap-8">
-      {tickets.map((ticket) => (
-        <Ticket {...ticket} />
+      {tickets.map((ticket, i) => (
+        <Ticket key={i} {...ticket} />
       ))}
     </div>
   )

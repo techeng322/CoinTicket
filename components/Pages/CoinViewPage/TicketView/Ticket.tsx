@@ -6,17 +6,19 @@ import { FcBearish, FcBullish } from 'react-icons/fc'
 interface TicketProps {
   userId: string
   username: string
+  profile_image: string
   coinId: string
   expecting: number // 1 for Bullish, -1 for Bearish
   caption: string
   timeHorizon: string
   potentialUpside: string
-  price: string
+  price: number
 }
 
 const Ticket = ({
   userId,
   username,
+  profile_image,
   coinId,
   expecting,
   timeHorizon,
@@ -24,14 +26,17 @@ const Ticket = ({
   price,
 }: TicketProps) => {
   const { coinInfo } = useCoinView()
+  const distancePrice = coinInfo.market_data.current_price.usd - price
+  const distancePercent = 100 *  (coinInfo.market_data.current_price.usd / price - 1)
 
+  console.log("chani-profileImage", profile_image)
   return (
     <div className="flex flex-col bg-blue-light_100 p-4 w-[500px] rounded-lg">
       {/* User Info Section */}
       <div className="flex items-center gap-4">
         <div className="w-[50px] h-[50px] relative">
           <Image
-            src="/images/profile_img.png"
+            src={profile_image}
             alt="User profile"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -69,7 +74,7 @@ const Ticket = ({
           <div className="text-[16px] text-grey-light_200">
             Added at <span className="font-bold">${price}</span>
           </div>
-          <div className="flex text-green-light_100 text-[16px]">0.00 (0.00%)</div>
+          <div className="flex text-green-light_100 text-[16px]">${distancePrice.toFixed(4)} ({distancePercent.toFixed(4)}%)</div>
         </div>
       </div>
 
