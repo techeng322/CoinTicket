@@ -37,7 +37,6 @@ module.exports = {
       },
       colors: {
         grey: {
-          DEFAULT: '#707070',
           light_100: '#f6f6f6',
           light_200: '#707070',
           light_300: '#919191',

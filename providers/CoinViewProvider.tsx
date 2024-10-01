@@ -1,4 +1,5 @@
 'use client'
+import { getTickets } from '@/lib/firebase/ticketService'
 import { getCoinInfo } from '@/lib/request/getCoinInfo'
 import { ReactNode, useContext, useState, createContext, useEffect } from 'react'
 
@@ -26,8 +27,8 @@ export const CoinViewProvider = ({ children, coinId }: { children: ReactNode; co
     const fetchCoinInfo = async () => {
       const response = await getCoinInfo(coinId)
       setCoinInfo(response)
+      console.log('fetchCoinInfo')
     }
-
     fetchCoinInfo()
   }, [coinId])
 

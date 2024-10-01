@@ -3,10 +3,11 @@
 import FilterButton from '@/components/FilterButton'
 import Header from '@/components/Header'
 import SideBar from '@/components/SideBar'
+import ToastProvider from '@/providers/ToastProvider'
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
-import { ReactNode } from 'react'
-import { ToastContainer } from 'react-toastify'
+import { ReactNode, Suspense } from 'react'
+import Loading from './loading'
 
 export const viewport = {
   width: 'device-width',
@@ -21,10 +22,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <SideBar />
           <div className="flex-grow">
             <Header />
-            <div className="p-4">{children}</div>
+            <ToastProvider>
+              <Suspense fallback={<Loading />}>
+                <div className="p-4">{children}</div>
+              </Suspense>
+            </ToastProvider>
           </div>
         </main>
-        <ToastContainer />
         <Analytics />
         <div className="fixed bottom-[100px] right-[20px]">
           <FilterButton />

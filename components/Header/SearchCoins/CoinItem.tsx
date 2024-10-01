@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 type CoinDataType = {
   id: string
@@ -13,14 +14,18 @@ type CoinItemProps = {
 }
 
 const CoinItem: React.FC<CoinItemProps> = ({ coinData }) => {
+  const router = useRouter()
+  const handleClick = (coinId: string) => {
+    router.push(`/coin-view/${coinId}`)
+  }
   return (
-    <Link href={`/coin-view/${coinData.id}`}>
+    <button onClick={() => handleClick(coinData.id)}>
       <div className="text-[white] cursor-pointer hover:bg-[#0A1B36] px-4 py-2">
         <div className="">
-          {coinData.symbol}({coinData.name})
+          {coinData.symbol}({coinData.id})
         </div>
       </div>
-    </Link>
+    </button>
   )
 }
 

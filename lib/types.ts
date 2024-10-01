@@ -18,3 +18,12 @@ export interface Post {
   title: string
   content: string[]
 }
+
+export interface Ticket {
+  userId: string
+  coinId: string
+  expecting: number
+  caption: string
+  timeHorizon: string
+  potentialUpside: string
+}

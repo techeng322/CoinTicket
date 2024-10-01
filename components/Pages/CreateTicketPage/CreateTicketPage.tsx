@@ -8,7 +8,7 @@ const CreateTicketPage = () => {
   const { step } = useCreateTicket()
   return (
     <div className="w-full p-4">
-      <div className="w-full flex justify-center items-center text-[20px] font-bold">
+      <div className="w-full flex justify-center items-center text-[24px] font-bold">
         Create Your Ticket
       </div>
       <div className="flex">

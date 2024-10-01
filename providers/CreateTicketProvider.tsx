@@ -1,5 +1,9 @@
 'use client'
-import { ReactNode, useContext, useState, createContext } from 'react'
+import { createTicket } from '@/lib/firebase/ticketService'
+import { getCoinInfo } from '@/lib/request/getCoinInfo'
+import { Ticket } from '@/lib/types'
+import { showToast } from '@/lib/utils/showToast'
+import { ReactNode, useContext, useState, createContext, useEffect } from 'react'
 
 export enum TIKETSTEP {
   STEPA = 'step a',
@@ -26,8 +30,8 @@ export enum POTENTIALUP {
 interface CreateCTPollContextType {
   step: string
   setStep: (param: string) => void
-  coinText: string
-  setCoinText: (param: string) => void
+  coinId: string
+  setCoinId: (param: string) => void
   expecting: number
   setExpecting: (param: number) => void
   timeHorizon: string
@@ -36,25 +40,54 @@ interface CreateCTPollContextType {
   setCaption: (param: string) => void
   potentialUpside: string
   setPotentialUpside: (param: string) => void
+  handlePost: () => void
+  coinInfo: any
+  setCoinInfo: (param: any) => void
+  price: number
+  setPrice: (param: any) => void
 }
 
 const CreateTicketContext = createContext<CreateCTPollContextType | undefined>(undefined)
 
 export const CreateTicketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [step, setStep] = useState<string>(TIKETSTEP.STEPA)
-  const [coinText, setCoinText] = useState<string>('')
+  const [coinId, setCoinId] = useState<string>('')
   const [expecting, setExpecting] = useState<number>(0) // bullihs: 1, bearish: -1, neutral: 0
   const [caption, setCaption] = useState<string>('')
   const [timeHorizon, setTimeHorizon] = useState<string>(TIMEHORIZON.NEXT1WEEK)
   const [potentialUpside, setPotentialUpside] = useState<string>(POTENTIALUP.UPTO5P)
+  const [coinInfo, setCoinInfo] = useState(null)
+  const [price, setPrice] = useState(0)
+
+  const handlePost = async () => {
+    const ticket: Ticket = {
+      userId: 'dlScweRcMoCOungIi5oY',
+      coinId,
+      expecting,
+      caption,
+      timeHorizon,
+      potentialUpside,
+    }
+    await createTicket(ticket)
+    showToast('success', 'Ticket Created!')
+  }
+  useEffect(() => {
+    if (!coinId) return
+    const fetchCoinInfo = async () => {
+      const response = await getCoinInfo(coinId)
+      console.log('chain-response', response)
+      if (response) setCoinInfo(response)
+    }
+    fetchCoinInfo()
+  }, [coinId])
 
   return (
     <CreateTicketContext.Provider
       value={{
         step,
         setStep,
-        coinText,
-        setCoinText,
+        coinId,
+        setCoinId,
         caption,
         setCaption,
         expecting,
@@ -63,6 +96,11 @@ export const CreateTicketProvider: React.FC<{ children: ReactNode }> = ({ childr
         setTimeHorizon,
         potentialUpside,
         setPotentialUpside,
+        handlePost,
+        coinInfo,
+        setCoinInfo,
+        price,
+        setPrice,
       }}
     >
       {children}

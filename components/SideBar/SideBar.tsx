@@ -1,7 +1,7 @@
 'use client'
 
 import LogoutButton from '../AuthButtons/LogoutButton'
-import SettingButton from '../SettingButton'
+import SettingButton from './SettingButton'
 import Adventage from './Adventage'
 import Logo from './Logo'
 import Menu from './Menu'

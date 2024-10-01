@@ -4,7 +4,7 @@ import { FiActivity } from 'react-icons/fi'
 import { FaRegEye } from 'react-icons/fa'
 import { CiCirclePlus } from 'react-icons/ci'
 import { useState } from 'react'
-import PostModal from '@/components/PostModal'
+import PostModal from './PostModal'
 
 const MenuButton = ({ children, icon }) => {
   return (

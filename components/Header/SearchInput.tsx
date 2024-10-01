@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
-import SearchCoin from '../SearchCoins/SearchCoins'
+import SearchCoin from './SearchCoins'
 
-const SearchInput = () => {
+const SearchBox = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   return (
@@ -23,4 +23,4 @@ const SearchInput = () => {
   )
 }
 
-export default SearchInput
+export default SearchBox

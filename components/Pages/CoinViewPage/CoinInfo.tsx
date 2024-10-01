@@ -1,7 +1,7 @@
 import formatCurrency from '@/lib/utils/formatCurrency'
 import { useCoinView } from '@/providers/CoinViewProvider'
 import Image from 'next/image'
-import { BiSolidUpArrow , BiSolidDownArrow } from 'react-icons/bi'
+import { BiSolidUpArrow, BiSolidDownArrow } from 'react-icons/bi'
 
 const CoinInfo = () => {
   const { coinInfo } = useCoinView()

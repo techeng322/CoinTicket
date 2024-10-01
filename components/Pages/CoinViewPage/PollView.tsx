@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { MdOutlinePoll } from 'react-icons/md'
 import { FaRegComment } from 'react-icons/fa'
-import { CiBookmark , CiFilter , CiShare1 } from 'react-icons/ci'
+import { CiBookmark, CiFilter, CiShare1 } from 'react-icons/ci'
 
 const PollView = () => {
   return (

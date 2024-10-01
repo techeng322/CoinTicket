@@ -2,13 +2,17 @@ import useClickOutside from '@/hooks/useClickOutsite'
 import Image from 'next/image'
 import { IoMdClose } from 'react-icons/io'
 
-interface NotificationProps {
+interface NotificationBoxProps {
   isVisible: boolean
   onClose: () => void
   containerClasses: string
 }
 
-const Notification: React.FC<NotificationProps> = ({ isVisible, onClose, containerClasses }) => {
+const NotificationBox: React.FC<NotificationBoxProps> = ({
+  isVisible,
+  onClose,
+  containerClasses,
+}) => {
   const { ref } = useClickOutside(onClose)
   if (!isVisible) return null
 
@@ -46,7 +50,6 @@ const Notification: React.FC<NotificationProps> = ({ isVisible, onClose, contain
                 className="rounded"
               />
             </div>
-
             <div className="text-white text-[14px]">Rifat You Won the Race!</div>
           </div>
         </div>
@@ -55,4 +58,4 @@ const Notification: React.FC<NotificationProps> = ({ isVisible, onClose, contain
   )
 }
 
-export default Notification
+export default NotificationBox

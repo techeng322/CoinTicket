@@ -1,5 +1,5 @@
 'use client'
-import { useCoinView , CoinViewTab } from '@/providers/CoinViewProvider'
+import { useCoinView, CoinViewTab } from '@/providers/CoinViewProvider'
 import OverView from './Overview'
 import TicketView from './TicketView'
 import PollView from './PollView'

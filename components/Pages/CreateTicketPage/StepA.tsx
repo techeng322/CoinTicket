@@ -1,10 +1,10 @@
 import { TIKETSTEP, useCreateTicket } from '@/providers/CreateTicketProvider'
 import { CiSearch } from 'react-icons/ci'
-import { ImArrowDown , ImArrowUp } from 'react-icons/im'
+import { ImArrowDown, ImArrowUp } from 'react-icons/im'
 import { FaArrowAltCircleRight } from 'react-icons/fa'
 
 const StepA = () => {
-  const { coinText, setCoinText, expecting, setExpecting, setStep, caption, setCaption } =
+  const { coinId, setCoinId, expecting, setExpecting, setStep, caption, setCaption } =
     useCreateTicket()
   return (
     <div className="w-full">
@@ -12,9 +12,9 @@ const StepA = () => {
         <div className="font-poppins_semibold text-[20px]">Enter Coin name</div>
         <div className="flex w-full relative items-center">
           <input
-            onChange={(e) => setCoinText(e.target.value)}
+            onChange={(e) => setCoinId(e.target.value)}
             type="text"
-            value={coinText}
+            value={coinId}
             placeholder="Search .."
             className="px-4 py-2 border-none focus:outline-none bg-blue-light_100 w-full rounded-lg"
           />
